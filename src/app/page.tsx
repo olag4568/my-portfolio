@@ -7,7 +7,6 @@ import {
   ArrowUpRight,
   Asterisk,
   Code2,
-  Github,
   Linkedin,
   Mail,
   Menu,
@@ -211,7 +210,7 @@ export default function Home() {
         <a href="#home" className="brand"><span className="brand-mark">Q<span>.</span></span><span>QUADRI AZEEZ</span></a>
         <p>BUILT WITH CURIOSITY IN LAGOS © 2026</p>
         <div className="social-links">
-          <a href="https://github.com/olag4568" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={18} /></a>
+          <a href="https://github.com/olag4568" target="_blank" rel="noreferrer" aria-label="GitHub"><Code2 size={18} /></a>
           <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={18} /></a>
           <a href="mailto:hello@quadri.dev" aria-label="Email"><Mail size={18} /></a>
         </div>
