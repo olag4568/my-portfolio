@@ -27,3 +27,33 @@ html,body{background:#000000!important}
 body{background-image:none!important}
 .portfolio-shell,.hero,.featured-section,.skills-about,.contact-band,.footer{background:#000000!important}
 .nav-wrap{background:#000000!important}
+
+/* Keep all page surfaces pure black until the light/dark theme switcher is added. */
+.featured-card,
+.secondary-button,
+.tech-float>span,
+.skill-chip,
+.dream-card,
+.art-sticker,
+.mockup-window,
+.mockup-top,
+.mockup-content,
+.mock-tiles span,
+.mock-phone,
+.phone-line {
+  background: #000000 !important;
+}
+.featured-card,
+.secondary-button,
+.tech-float>span,
+.skill-chip,
+.dream-card,
+.mockup-window,
+.mock-phone {
+  border-color: #292929;
+}
+.skills-about,
+.contact-band,
+.contact-details {
+  background: #000000 !important;
+}
