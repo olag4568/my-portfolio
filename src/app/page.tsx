@@ -10,6 +10,47 @@ import {
 
 const skills = ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "Node.js", "Git & GitHub", "HTML & CSS", "JavaScript"];
 
+function ContactForm() {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const name = String(data.get("name") || "").trim();
+    const email = String(data.get("email") || "").trim();
+    const project = String(data.get("project") || "").trim();
+    const budget = String(data.get("budget") || "").trim();
+    const details = String(data.get("details") || "").trim();
+    const subject = `Website project enquiry: ${project}`;
+    const body = [
+      "Hi Quadri,",
+      "",
+      `My name is ${name}.`,
+      `My email: ${email}`,
+      `Project type: ${project}`,
+      `Budget: ${budget || "Not specified"}`,
+      "",
+      "Project details:",
+      details,
+    ].join("\\n");
+    window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&to=quadriazeez745%40gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  return (
+    <form className="contact-form" onSubmit={handleSubmit}>
+      <div className="contact-fields-two">
+        <label>Full name<input name="name" autoComplete="name" placeholder="Your name" required maxLength={100} /></label>
+        <label>Email address<input name="email" type="email" autoComplete="email" placeholder="you@example.com" required maxLength={254} /></label>
+      </div>
+      <div className="contact-fields-two">
+        <label>Project type<select name="project" required defaultValue=""><option value="" disabled>Select a service</option><option>Business website</option><option>Web application</option><option>E-commerce website</option><option>Bug fixing or improvements</option><option>Other project</option></select></label>
+        <label>Budget (optional)<select name="budget" defaultValue=""><option value="">Prefer not to say</option><option>Under ₦100,000</option><option>₦100,000–₦300,000</option><option>₦300,000–₦700,000</option><option>₦700,000+</option><option>To be discussed</option></select></label>
+      </div>
+      <label>Project details<textarea name="details" rows={5} placeholder="What would you like to build?" required maxLength={5000} /></label>
+      <button className="primary-button contact-submit" type="submit"><Mail size={16}/> Submit via Gmail</button>
+      <p className="contact-form-note">Clicking submit opens Gmail with your project details ready to send.</p>
+    </form>
+  );
+}
+
 export default function HomePage() {
   const [headlineIndex, setHeadlineIndex] = useState(0);
   const headlines = ["Let’s build something customers love.", "Abeg, let’s make your business stand out.", "Turn your idea into a website that works."];
@@ -42,7 +83,7 @@ export default function HomePage() {
       <div className="project-mockup"><div className="mockup-window"><div className="mockup-top"><span>● SPATDEL</span><span>Homes　Community　Explore</span><b>Get Started</b></div><div className="mockup-content"><div><small>FIND YOUR NEXT HOME</small><h3>Find Your<br/>Next Home in Ijegun</h3><p>Discover homes and opportunities around your community.</p><div className="mock-search">⌕　Search properties in Ijegun</div><div className="mock-tiles"><span>⌂<small>For Rent</small></span><span>⌂<small>For Sale</small></span><span>♧<small>Community</small></span></div></div><div className="mock-map"><MapPin size={34}/><span>IJEGUN, LAGOS</span></div></div></div><div className="mock-phone"><div className="phone-notch"/><small>SPATDEL</small><h4>Find Your Next Home</h4><div className="phone-map"><MapPin size={24}/></div><div className="phone-line"/><div className="phone-line short"/></div></div></div></section>
       <section className="skills-about section-pad"><div className="skills-panel" id="skills"><div className="small-section-title"><Zap/><div><h2>My Skills</h2><p>Technologies I work with</p></div></div><div className="skill-grid">{skills.map((skill,i)=><span className="skill-chip" key={skill}><i>{["N","⚛","TS","≈","ϟ","PG","⬡","⌘","5","JS"][i]}</i>{skill}</span>)}</div></div>
       <div className="about-panel" id="about"><div className="small-section-title"><UserRound/><div><h2>About Me</h2><p>My journey so far</p></div></div><p>I’m Quadri Azeez, a passionate web developer focused on building modern and scalable web applications. I enjoy solving problems, learning new technologies, and creating products that make a real impact. My journey started with curiosity about how websites work, and now I’m building real-world solutions like SPATDEL.</p><ul><li><MapPin/> Lagos, Nigeria</li><li><GraduationCap/> Computer Science (In Progress)</li><li><Heart/> Football | Anime | Tech</li></ul></div><div className="dream-card"><Sparkles size={27}/><span>Better Code.<br/>Bigger Dreams.</span><Code2 size={28}/></div></section>
-      <section className="contact-band section-pad" id="contact"><div className="contact-pitch"><Zap/><p className="eyebrow">HAVE AN IDEA? LET’S MAKE IT REAL</p><h2 key={headlineIndex} className="rotating-headline">{headlines[headlineIndex]}</h2><p>I create clean, modern websites that help businesses look professional, earn trust, and turn visitors into customers.</p><div className="contact-direct-actions"><a className="primary-button" href="https://mail.google.com/mail/?view=cm&fs=1&to=quadriazeez745%40gmail.com&su=Website%20project%20enquiry" target="_blank" rel="noreferrer"><Mail size={16}/> Email Me</a><a className="secondary-button" href="https://wa.me/2348035833564?text=Hi%20Quadri%2C%20I%20am%20interested%20in%20your%20web%20development%20services." target="_blank" rel="noreferrer"><MessageCircleIcon size={16}/> WhatsApp Me</a></div></div><div className="contact-details"><h3>Let’s talk about your project</h3><p>No forms. Just choose how you’d like to reach me.</p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=quadriazeez745%40gmail.com&su=Website%20project%20enquiry" target="_blank" rel="noreferrer"><Mail/> quadriazeez745@gmail.com</a><a href="https://wa.me/2348035833564?text=Hi%20Quadri%2C%20I%20am%20interested%20in%20your%20web%20development%20services." target="_blank" rel="noreferrer"><MessageCircleIcon/> WhatsApp me</a><a href="https://github.com/olag4568" target="_blank" rel="noreferrer"><Code2/> github.com/olag4568</a><span><MapPin/> Lagos, Nigeria</span></div></section>
+      <section className="contact-band section-pad" id="contact"><div className="contact-pitch"><Zap/><p className="eyebrow">HAVE AN IDEA? LET’S MAKE IT REAL</p><h2 key={headlineIndex} className="rotating-headline">{headlines[headlineIndex]}</h2><p>I create clean, modern websites that help businesses look professional, earn trust, and turn visitors into customers.</p><div className="contact-direct-actions"><a className="primary-button" href="https://mail.google.com/mail/?view=cm&fs=1&to=quadriazeez745%40gmail.com&su=Website%20project%20enquiry" target="_blank" rel="noreferrer"><Mail size={16}/> Email Me</a><a className="secondary-button" href="https://wa.me/2348035833564?text=Hi%20Quadri%2C%20I%20am%20interested%20in%20your%20web%20development%20services." target="_blank" rel="noreferrer"><MessageCircleIcon size={16}/> WhatsApp Me</a></div></div><div className="contact-form-wrap"><div className="contact-form-heading"><p className="eyebrow">TELL ME ABOUT YOUR IDEA</p><h2>Start Your Project</h2><p>Fill the form and submit to open Gmail with your details. Or use WhatsApp directly without filling anything.</p></div><ContactForm /><a className="secondary-button contact-whatsapp-direct" href="https://wa.me/2348035833564?text=Hi%20Quadri%2C%20I%20am%20interested%20in%20your%20web%20development%20services." target="_blank" rel="noreferrer"><MessageCircleIcon size={16}/> Contact me on WhatsApp — no form needed</a><div className="contact-details"><a href="https://github.com/olag4568" target="_blank" rel="noreferrer"><Code2/> github.com/olag4568</a><span><MapPin/> Lagos, Nigeria</span></div></div></section>
       <footer className="footer section-pad"><a href="#home" className="brand"><span className="brand-mark">Q<span>.</span></span><span className="brand-name">Quadri <b>Azeez</b></span></a><p>© 2026 Quadri Azeez. Built with curiosity in Lagos.</p><a href="#home">Back to top ↑</a></footer>
     </main>
   );
