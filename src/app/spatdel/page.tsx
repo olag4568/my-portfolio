@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ThemeToggle from "@/components/ThemeToggle";
 import { ArrowLeft, ArrowUpRight, CheckCircle2, Code2, Home, MapPin, ShieldCheck, Users, Wallet } from "lucide-react";
 
 const focusAreas = [
@@ -13,7 +14,7 @@ export default function SpatdelProjectPage() {
     <main className="portfolio-shell" style={{ minHeight: "100vh" }}>
       <nav className="nav-wrap">
         <Link href="/" className="brand" aria-label="Back to Quadri Azeez portfolio"><span className="brand-mark">Q<span>.</span></span><span className="brand-name">Quadri <b>Azeez</b></span></Link>
-        <Link href="/#work" className="secondary-button"><ArrowLeft size={15} /> Back to Projects</Link>
+        <div className="nav-actions"><ThemeToggle /><Link href="/#work" className="secondary-button"><ArrowLeft size={15} /> Back to Projects</Link></div>
       </nav>
       <section className="section-pad" style={{ paddingTop: "clamp(48px, 9vw, 100px)", paddingBottom: 56, maxWidth: 1100, margin: "0 auto" }}>
         <p className="eyebrow"><Code2 size={14} /> PROJECT CASE STUDY</p>
