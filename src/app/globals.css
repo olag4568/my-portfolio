@@ -321,3 +321,54 @@ body {
 .contact-message-options .primary-button,.contact-message-options .secondary-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;cursor:pointer}
 .contact-edit-button{justify-self:start;border:0;background:transparent;color:#a3a3a3;text-decoration:underline;font:inherit;font-size:11px;cursor:pointer;padding:4px 0}
 @media(max-width:720px){.contact-message-options .primary-button,.contact-message-options .secondary-button{width:100%}}
+
+
+/* Simplified contact section: direct contact, no form required. */
+.contact-band {
+  grid-template-columns: 1.2fr 1fr;
+  gap: 28px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+.contact-pitch {
+  margin: 0;
+  padding: 28px;
+  border-radius: 8px;
+  align-self: stretch;
+}
+.contact-pitch .eyebrow {
+  margin: 12px 0;
+}
+.rotating-headline {
+  min-height: 2.2em;
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -.045em;
+  animation: headline-in .35s ease both;
+}
+.contact-direct-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+.contact-direct-actions .primary-button,
+.contact-direct-actions .secondary-button {
+  min-height: 44px;
+}
+.contact-details {
+  border-left: 0;
+  padding: 28px 0;
+  align-self: center;
+}
+@keyframes headline-in {
+  from { opacity: 0; transform: translateY(7px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 720px) {
+  .contact-band { grid-template-columns: 1fr; gap: 0; }
+  .contact-pitch { padding: 24px; margin: 0; }
+  .contact-direct-actions { flex-direction: column; }
+  .contact-direct-actions a { width: 100%; }
+  .contact-details { padding: 24px 0 8px; }
+}
