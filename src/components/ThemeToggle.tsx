@@ -31,7 +31,6 @@ export default function ThemeToggle() {
       title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
     >
       {theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}
-      <span>{theme === "dark" ? "Light mode" : "Dark mode"}</span>
     </button>
   );
 }
