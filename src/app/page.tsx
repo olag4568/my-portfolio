@@ -53,7 +53,7 @@ function ContactForm() {
 
 export default function HomePage() {
   const [headlineIndex, setHeadlineIndex] = useState(0);
-  const headlines = ["Let’s build something customers love.", "Abeg, let’s make your business stand out.", "Turn your idea into a website that works."];
+  const headlines = ["Let’s build something great.", "Let’s build something amazing.", "Let’s build something brilliant.", "Let’s build something unforgettable.", "Turn your ideas into a website that works."];
 
   useEffect(() => {
     const timer = window.setInterval(() => setHeadlineIndex((current) => (current + 1) % headlines.length), 3000);
