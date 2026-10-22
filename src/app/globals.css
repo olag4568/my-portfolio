@@ -444,3 +444,132 @@ html[data-theme="light"] .portfolio-shell section[style*="border: 1px solid #303
 
 
 .footer-actions{display:flex;align-items:center;gap:16px}.theme-toggle{width:38px;height:38px;min-height:38px;padding:0;border-radius:50%;gap:0}.theme-toggle span{display:none!important}@media(max-width:720px){.footer-actions{gap:12px}.theme-toggle{width:36px;height:36px;min-height:36px}}
+
+
+/* Comprehensive light-theme readability fixes for every portfolio page. */
+html[data-theme="light"] {
+  color-scheme: light;
+}
+html[data-theme="light"] body,
+html[data-theme="light"] .portfolio-shell {
+  background: #f5f7fb !important;
+  color: #172033 !important;
+}
+html[data-theme="light"] .portfolio-shell h1,
+html[data-theme="light"] .portfolio-shell h2,
+html[data-theme="light"] .portfolio-shell h3,
+html[data-theme="light"] .portfolio-shell h4,
+html[data-theme="light"] .portfolio-shell p,
+html[data-theme="light"] .portfolio-shell li,
+html[data-theme="light"] .portfolio-shell label,
+html[data-theme="light"] .portfolio-shell article,
+html[data-theme="light"] .portfolio-shell section,
+html[data-theme="light"] .portfolio-shell span {
+  color: #263247;
+}
+html[data-theme="light"] .portfolio-shell .brand-name,
+html[data-theme="light"] .portfolio-shell .brand-name b,
+html[data-theme="light"] .portfolio-shell .brand-mark {
+  color: #172033;
+}
+html[data-theme="light"] .portfolio-shell .eyebrow,
+html[data-theme="light"] .portfolio-shell .small-section-title > svg,
+html[data-theme="light"] .portfolio-shell .feature-points svg,
+html[data-theme="light"] .portfolio-shell .about-panel li svg,
+html[data-theme="light"] .portfolio-shell .contact-details svg {
+  color: #4338ca;
+}
+html[data-theme="light"] .portfolio-shell .highlight-word {
+  color: #4338ca !important;
+  background: none !important;
+  -webkit-text-fill-color: #4338ca;
+}
+html[data-theme="light"] .portfolio-shell .hero-art {
+  background: #e8edf6 !important;
+  border-color: #cbd5e1 !important;
+}
+html[data-theme="light"] .portfolio-shell .portrait-placeholder {
+  background: linear-gradient(180deg, transparent, #e8edf6) !important;
+}
+html[data-theme="light"] .portfolio-shell .featured-card,
+html[data-theme="light"] .portfolio-shell .secondary-button,
+html[data-theme="light"] .portfolio-shell .tech-float > span,
+html[data-theme="light"] .portfolio-shell .skill-chip,
+html[data-theme="light"] .portfolio-shell .art-sticker,
+html[data-theme="light"] .portfolio-shell .mockup-window,
+html[data-theme="light"] .portfolio-shell .mockup-top,
+html[data-theme="light"] .portfolio-shell .mockup-content,
+html[data-theme="light"] .portfolio-shell .mock-tiles span,
+html[data-theme="light"] .portfolio-shell .mock-phone,
+html[data-theme="light"] .portfolio-shell .dream-card {
+  background: #fff !important;
+  color: #263247 !important;
+  border-color: #d7deea !important;
+}
+html[data-theme="light"] .portfolio-shell .featured-card *,
+html[data-theme="light"] .portfolio-shell .mockup-window *,
+html[data-theme="light"] .portfolio-shell .mock-phone *,
+html[data-theme="light"] .portfolio-shell .skill-chip,
+html[data-theme="light"] .portfolio-shell .tech-float > span {
+  color: #263247;
+}
+html[data-theme="light"] .portfolio-shell .primary-button,
+html[data-theme="light"] .portfolio-shell .nav-cta {
+  background: #4338ca !important;
+  color: #fff !important;
+}
+html[data-theme="light"] .portfolio-shell .primary-button *,
+html[data-theme="light"] .portfolio-shell .nav-cta * {
+  color: #fff !important;
+}
+html[data-theme="light"] .portfolio-shell .contact-pitch {
+  background: #e6eaff !important;
+  border-color: #d1d9eb !important;
+}
+html[data-theme="light"] .portfolio-shell .contact-pitch h2,
+html[data-theme="light"] .portfolio-shell .contact-pitch p {
+  color: #263247 !important;
+}
+html[data-theme="light"] .portfolio-shell .contact-form-wrap,
+html[data-theme="light"] .portfolio-shell .contact-form-heading {
+  color: #263247 !important;
+}
+html[data-theme="light"] .portfolio-shell .contact-form input,
+html[data-theme="light"] .portfolio-shell .contact-form select,
+html[data-theme="light"] .portfolio-shell .contact-form textarea {
+  background: #fff !important;
+  color: #172033 !important;
+  border-color: #cbd5e1 !important;
+}
+html[data-theme="light"] .portfolio-shell .contact-form input::placeholder,
+html[data-theme="light"] .portfolio-shell .contact-form textarea::placeholder {
+  color: #64748b !important;
+  opacity: 1;
+}
+html[data-theme="light"] .portfolio-shell .footer,
+html[data-theme="light"] .portfolio-shell .footer p,
+html[data-theme="light"] .portfolio-shell .footer a {
+  color: #526078;
+}
+html[data-theme="light"] .portfolio-shell [style*="color: #ddd"],
+html[data-theme="light"] .portfolio-shell [style*="color:#ddd"],
+html[data-theme="light"] .portfolio-shell [style*="color: #ccc"],
+html[data-theme="light"] .portfolio-shell [style*="color:#ccc"],
+html[data-theme="light"] .portfolio-shell [style*="color: #aaa"],
+html[data-theme="light"] .portfolio-shell [style*="color:#aaa"],
+html[data-theme="light"] .portfolio-shell [style*="color: #bbb"],
+html[data-theme="light"] .portfolio-shell [style*="color:#bbb"] {
+  color: #526078 !important;
+}
+html[data-theme="light"] .portfolio-shell [style*="background: #080808"],
+html[data-theme="light"] .portfolio-shell [style*="background:#080808"],
+html[data-theme="light"] .portfolio-shell [style*="background: \"#080808\""],
+html[data-theme="light"] .portfolio-shell [style*="background: #000"] {
+  background: #fff !important;
+  border-color: #dbe1ec !important;
+}
+html[data-theme="light"] .portfolio-shell [style*="border: 1px solid #303030"],
+html[data-theme="light"] .portfolio-shell [style*="border-top: 1px solid #303030"],
+html[data-theme="light"] .portfolio-shell [style*="border-bottom: 1px solid #303030"] {
+  border-color: #dbe1ec !important;
+}
