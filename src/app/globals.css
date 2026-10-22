@@ -573,3 +573,50 @@ html[data-theme="light"] .portfolio-shell [style*="border-top: 1px solid #303030
 html[data-theme="light"] .portfolio-shell [style*="border-bottom: 1px solid #303030"] {
   border-color: #dbe1ec !important;
 }
+
+
+/* Light theme accent: fresh teal/blue instead of purple, with a clear contact headline. */
+html[data-theme="light"] .portfolio-shell .eyebrow,
+html[data-theme="light"] .portfolio-shell .small-section-title > svg,
+html[data-theme="light"] .portfolio-shell .feature-points svg,
+html[data-theme="light"] .portfolio-shell .about-panel li svg,
+html[data-theme="light"] .portfolio-shell .contact-details svg {
+  color: #087f8c !important;
+}
+html[data-theme="light"] .portfolio-shell .highlight-word {
+  color: #087f8c !important;
+  -webkit-text-fill-color: #087f8c !important;
+}
+html[data-theme="light"] .portfolio-shell .primary-button,
+html[data-theme="light"] .portfolio-shell .nav-cta {
+  background: #087f8c !important;
+  color: #fff !important;
+}
+html[data-theme="light"] .portfolio-shell .primary-button *,
+html[data-theme="light"] .portfolio-shell .nav-cta * {
+  color: #fff !important;
+}
+html[data-theme="light"] .portfolio-shell .contact-pitch {
+  background: linear-gradient(125deg, #e0f7fa, #eaf2ff) !important;
+  border-color: #c5e7eb !important;
+}
+html[data-theme="light"] .portfolio-shell .contact-pitch h2.rotating-headline {
+  color: #075e67 !important;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+  animation: light-headline-in .35s ease both;
+}
+html[data-theme="light"] .portfolio-shell .contact-pitch p,
+html[data-theme="light"] .portfolio-shell .contact-pitch .eyebrow,
+html[data-theme="light"] .portfolio-shell .contact-pitch > svg {
+  color: #075e67 !important;
+}
+html[data-theme="light"] .portfolio-shell .secondary-button {
+  color: #263247 !important;
+  background: #fff !important;
+  border-color: #b9c8d8 !important;
+}
+@keyframes light-headline-in {
+  from { opacity: .35; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
