@@ -724,3 +724,28 @@ html:not([data-theme="light"]) .portfolio-shell .contact-pitch h2.rotating-headl
   from { background-position: 0% 50%; }
   to { background-position: 100% 50%; }
 }
+
+
+/* Final reliable fix: keep the headline readable and colour only its changing final word. */
+.portfolio-shell .contact-pitch h2.rotating-headline {
+  display: block !important;
+  background: none !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  animation: none !important;
+}
+.portfolio-shell .contact-pitch h2.rotating-headline .rainbow-word {
+  display: inline !important;
+  font-weight: 900 !important;
+  background: linear-gradient(90deg, #ff1744 0%, #ff9100 25%, #00a86b 50%, #1677ff 75%, #a020f0 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: #1677ff !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: none !important;
+  animation: none !important;
+}
+html[data-theme="light"] .portfolio-shell .contact-pitch h2.rotating-headline {
+  color: #172033 !important;
+  -webkit-text-fill-color: #172033 !important;
+}
