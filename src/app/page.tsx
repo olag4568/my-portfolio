@@ -54,7 +54,7 @@ function ContactForm() {
 
 export default function HomePage() {
   const [headlineIndex, setHeadlineIndex] = useState(0);
-  const headlines = ["great.", "amazing.", "brilliant.", "unforgettable."];
+  const headlines = ["great.", "amazing.", "brilliant.", "unforgettable.", "incredible.", "exceptional.", "remarkable.", "outstanding.", "extraordinary.", "impactful.", "creative.", "beautiful.", "powerful.", "memorable.", "successful."];
 
   useEffect(() => {
     const timer = window.setInterval(() => setHeadlineIndex((current) => (current + 1) % headlines.length), 3000);
