@@ -13,34 +13,60 @@ const skills = ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "P
 
 function ContactForm() {
   const [status, setStatus] = useState("");
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setStatus("");
+    setIsSubmitting(true);
+
     const form = event.currentTarget;
     const data = new FormData(form);
-    const name = String(data.get("name") || "").trim();
-    const email = String(data.get("email") || "").trim();
-    const project = String(data.get("project") || "").trim();
-    const budget = String(data.get("budget") || "").trim();
-    const details = String(data.get("details") || "").trim();
-    const subject = encodeURIComponent(`Portfolio enquiry: ${project}`);
-    const body = encodeURIComponent(`Hi Quadri,\n\nMy name is ${name}.\nMy email: ${email}\nProject type: ${project}\nBudget: ${budget || "Not specified"}\n\nProject details:\n${details}\n\nSent from your portfolio contact form.`);
-    window.location.href = `mailto:quadriazeez745@gmail.com?subject=${subject}&body=${body}`;
-    setStatus("Your email app should open with the message prepared. Please send it from there.");
+    const payload = {
+      name: String(data.get("name") || "").trim(),
+      email: String(data.get("email") || "").trim(),
+      project: String(data.get("project") || "").trim(),
+      budget: String(data.get("budget") || "").trim(),
+      details: String(data.get("details") || "").trim(),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Could not send your message. Please try again.");
+      }
+
+      setStatus("Message sent successfully! I’ll get back to you as soon as I can.");
+      form.reset();
+    } catch (error) {
+      setStatus(error instanceof Error ? error.message : "Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
+
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
       <div className="contact-fields-two">
-        <label>Full name<input name="name" autoComplete="name" placeholder="Your name" required /></label>
-        <label>Email address<input name="email" type="email" autoComplete="email" placeholder="you@example.com" required /></label>
+        <label>Full name<input name="name" autoComplete="name" placeholder="Your name" required maxLength={100} /></label>
+        <label>Email address<input name="email" type="email" autoComplete="email" placeholder="you@example.com" required maxLength={254} /></label>
       </div>
       <div className="contact-fields-two">
         <label>Project type<select name="project" required defaultValue=""><option value="" disabled>Select a service</option><option>Business website</option><option>Web application</option><option>E-commerce website</option><option>Bug fixing or improvements</option><option>Other project</option></select></label>
         <label>Budget (optional)<select name="budget" defaultValue=""><option value="">Prefer not to say</option><option>Under ₦100,000</option><option>₦100,000–₦300,000</option><option>₦300,000–₦700,000</option><option>₦700,000+</option><option>To be discussed</option></select></label>
       </div>
-      <label>Project details<textarea name="details" rows={5} placeholder="What would you like to build?" required /></label>
-      <button className="primary-button contact-submit" type="submit">Prepare Message <Send size={15}/></button>
+      <label>Project details<textarea name="details" rows={5} placeholder="What would you like to build?" required maxLength={5000} /></label>
+      <button className="primary-button contact-submit" type="submit" disabled={isSubmitting}>
+        {isSubmitting ? "Sending..." : "Send Message"} <Send size={15}/>
+      </button>
       {status && <p className="contact-form-status" role="status">{status}</p>}
-      <p className="contact-form-note">This form prepares an email in your device’s email app; it does not send automatically.</p>
+      <p className="contact-form-note">Your message will be sent securely through the website’s contact service.</p>
     </form>
   );
 }
