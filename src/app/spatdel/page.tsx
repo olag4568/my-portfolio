@@ -25,7 +25,33 @@ export default function SpatdelProjectPage() {
         <p style={{ fontSize: "clamp(17px, 2.2vw, 23px)", lineHeight: 1.65, color: "#ddd", maxWidth: 800, margin: "0 0 24px" }}>A community-focused property marketplace being built around Ijegun — bringing property discovery, local community features and trust-focused workflows into one digital experience.</p>
         <p style={{ color: "#aaa", fontSize: 14, lineHeight: 1.9, maxWidth: 780, margin: "0 0 30px" }}>SPATDEL is an ongoing project. The current focus is shaping a practical, location-specific platform for property listings and community participation. Features described on this page represent the product direction and may still be under development; availability can change as the project progresses.</p>
         <section className="featured-section" style={{ marginBottom: 58, padding: 0 }}>
-          <div className="project-mockup"><div className="mockup-window"><div className="mockup-top"><span>● SPATDEL</span><span>Homes　Community　Explore</span><b>Get Started</b></div><div className="mockup-content"><div><small>FIND YOUR NEXT HOME</small><h3>Find Your<br/>Next Home in Ijegun</h3><p>Discover homes and opportunities around your community.</p><div className="mock-search">⌕　Search properties in Ijegun</div><div className="mock-tiles"><span>⌂<small>For Rent</small></span><span>⌂<small>For Sale</small></span><span>♧<small>Community</small></span></div></div><div className="mock-map"><MapPin size={34}/><span>IJEGUN, LAGOS</span></div></div></div><div className="mock-phone"><div className="phone-notch"/><small>SPATDEL</small><h4>Find Your Next Home</h4><div className="phone-map"><MapPin size={24}/></div><div className="phone-line"/><div className="phone-line short"/></div></div></div>
+          <div className="project-mockup">
+            <div className="mockup-window">
+              <div className="mockup-top"><span>● SPATDEL</span><span>Homes　Community　Explore</span><b>Get Started</b></div>
+              <div className="mockup-content">
+                <div>
+                  <small>FIND YOUR NEXT HOME</small>
+                  <h3>Find Your<br />Next Home in Ijegun</h3>
+                  <p>Discover homes and opportunities around your community.</p>
+                  <div className="mock-search">⌕　Search properties in Ijegun</div>
+                  <div className="mock-tiles">
+                    <span>⌂<small>For Rent</small></span>
+                    <span>⌂<small>For Sale</small></span>
+                    <span>♧<small>Community</small></span>
+                  </div>
+                </div>
+                <div className="mock-map"><MapPin size={34} /><span>IJEGUN, LAGOS</span></div>
+              </div>
+            </div>
+            <div className="mock-phone">
+              <div className="phone-notch" />
+              <small>SPATDEL</small>
+              <h4>Find Your Next Home</h4>
+              <div className="phone-map"><MapPin size={24} /></div>
+              <div className="phone-line" />
+              <div className="phone-line short" />
+            </div>
+          </div>
         </section>
         <div style={{ borderTop: "1px solid #303030", borderBottom: "1px solid #303030", padding: "24px 0", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 22, marginBottom: 58 }}>
           <div><p className="eyebrow">PROJECT TYPE</p><p style={{ margin: 0, fontSize: 15 }}>Property marketplace</p></div>
