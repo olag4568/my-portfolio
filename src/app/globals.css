@@ -749,3 +749,22 @@ html[data-theme="light"] .portfolio-shell .contact-pitch h2.rotating-headline {
   color: #172033 !important;
   -webkit-text-fill-color: #172033 !important;
 }
+
+
+/* Light mode: replace leftover teal text accents with readable black; preserve rainbow word and white button labels. */
+html[data-theme="light"] .portfolio-shell .eyebrow,
+html[data-theme="light"] .portfolio-shell .small-section-title > svg,
+html[data-theme="light"] .portfolio-shell .feature-points svg,
+html[data-theme="light"] .portfolio-shell .about-panel li svg,
+html[data-theme="light"] .portfolio-shell .contact-details svg,
+html[data-theme="light"] .portfolio-shell .highlight-word {
+  color: #111111 !important;
+  -webkit-text-fill-color: #111111 !important;
+}
+html[data-theme="light"] .portfolio-shell .contact-pitch h2.rotating-headline .rainbow-word {
+  background: linear-gradient(90deg, #ff1744 0%, #ff9100 25%, #00a86b 50%, #1677ff 75%, #a020f0 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: #1677ff !important;
+  -webkit-text-fill-color: transparent !important;
+}
