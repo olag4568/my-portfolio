@@ -704,3 +704,23 @@ html:not([data-theme="light"]) .portfolio-shell .contact-pitch h2.rotating-headl
   -webkit-text-fill-color: transparent !important;
   animation: light-rainbow-cycle 6s linear infinite;
 }
+
+
+/* Ensure the rotating final word stays bold and readable while the rainbow moves. */
+.portfolio-shell .contact-pitch h2.rotating-headline .rainbow-word {
+  display: inline-block !important;
+  font-weight: 800 !important;
+  background-image: linear-gradient(90deg, #e00024 0%, #d65a00 22%, #16852b 44%, #005bd1 66%, #8526c7 84%, #e00024 100%) !important;
+  background-size: 300% 100% !important;
+  background-position: 0% 50%;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 0 1px rgba(20, 20, 20, 0.18);
+  animation: readable-rainbow-word 5s linear infinite !important;
+}
+@keyframes readable-rainbow-word {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
