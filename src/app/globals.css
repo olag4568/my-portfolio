@@ -441,3 +441,6 @@ html[data-theme="light"] .portfolio-shell section[style*="background: #080808"],
 html[data-theme="light"] .portfolio-shell article[style*="background: #080808"]{background:#fff!important;border-color:#dbe1ec!important}
 html[data-theme="light"] .portfolio-shell section[style*="border-top: 1px solid #303030"],
 html[data-theme="light"] .portfolio-shell section[style*="border: 1px solid #303030"]{border-color:#dbe1ec!important}
+
+
+.footer-actions{display:flex;align-items:center;gap:16px}.theme-toggle{width:38px;height:38px;min-height:38px;padding:0;border-radius:50%;gap:0}.theme-toggle span{display:none!important}@media(max-width:720px){.footer-actions{gap:12px}.theme-toggle{width:36px;height:36px;min-height:36px}}
