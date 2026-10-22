@@ -635,6 +635,9 @@ html[data-theme="light"] .portfolio-shell .contact-details svg {
   background-size: 200% 100%;
   animation: light-rainbow-cycle 6s linear infinite;
 }
+html[data-theme="light"] .portfolio-shell .contact-pitch h2.rotating-headline {
+  animation: light-headline-in .35s ease both, light-rainbow-cycle 6s linear infinite;
+}
 html[data-theme="light"] .portfolio-shell .highlight-word,
 html[data-theme="light"] .portfolio-shell .contact-pitch h2.rotating-headline {
   color: #0a84ff !important;
