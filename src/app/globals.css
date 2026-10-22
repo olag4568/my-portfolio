@@ -313,3 +313,11 @@ body {
 .contact-details{min-width:0}
 @media(max-width:1050px){.contact-band{grid-template-columns:1fr 1.25fr}.contact-pitch{grid-column:1/-1;margin-left:calc(clamp(22px,5vw,76px)*-1);margin-right:calc(clamp(22px,5vw,76px)*-1);padding-left:clamp(22px,5vw,76px);border-radius:0}.contact-form-wrap{padding-left:0}.contact-details{padding-left:18px}}
 @media(max-width:720px){.contact-band{grid-template-columns:1fr}.contact-form-wrap{padding:26px 0}.contact-details{border-left:0;border-top:1px solid #303030;padding:22px 0}.contact-fields-two{grid-template-columns:1fr}.contact-submit{width:100%}}
+
+
+/* Contact message destination choices */
+.contact-message-options{display:grid;gap:10px;padding:16px;border:1px solid #303030;border-radius:8px;background:#101010}
+.contact-message-options>p:first-child{margin:0 0 2px;color:#e5e5e5;font-size:12px}
+.contact-message-options .primary-button,.contact-message-options .secondary-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;cursor:pointer}
+.contact-edit-button{justify-self:start;border:0;background:transparent;color:#a3a3a3;text-decoration:underline;font:inherit;font-size:11px;cursor:pointer;padding:4px 0}
+@media(max-width:720px){.contact-message-options .primary-button,.contact-message-options .secondary-button{width:100%}}
