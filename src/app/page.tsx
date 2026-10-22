@@ -1,13 +1,49 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight, ArrowUpRight, CheckCircle2, Code2,
   Download, GraduationCap, Heart, Home, Mail, MapPin,
-  Menu, Send, Sparkles, UserRound, Zap,
+  Menu, Send, Sparkles, UserRound, Zap, MessageCircle as MessageCircleIcon,
 } from "lucide-react";
 
 const skills = ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "Node.js", "Git & GitHub", "HTML & CSS", "JavaScript"];
+
+
+function ContactForm() {
+  const [status, setStatus] = useState("");
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const name = String(data.get("name") || "").trim();
+    const email = String(data.get("email") || "").trim();
+    const project = String(data.get("project") || "").trim();
+    const budget = String(data.get("budget") || "").trim();
+    const details = String(data.get("details") || "").trim();
+    const subject = encodeURIComponent(`Portfolio enquiry: ${project}`);
+    const body = encodeURIComponent(`Hi Quadri,\n\nMy name is ${name}.\nMy email: ${email}\nProject type: ${project}\nBudget: ${budget || "Not specified"}\n\nProject details:\n${details}\n\nSent from your portfolio contact form.`);
+    window.location.href = `mailto:quadriazeez745@gmail.com?subject=${subject}&body=${body}`;
+    setStatus("Your email app should open with the message prepared. Please send it from there.");
+  }
+  return (
+    <form className="contact-form" onSubmit={handleSubmit}>
+      <div className="contact-fields-two">
+        <label>Full name<input name="name" autoComplete="name" placeholder="Your name" required /></label>
+        <label>Email address<input name="email" type="email" autoComplete="email" placeholder="you@example.com" required /></label>
+      </div>
+      <div className="contact-fields-two">
+        <label>Project type<select name="project" required defaultValue=""><option value="" disabled>Select a service</option><option>Business website</option><option>Web application</option><option>E-commerce website</option><option>Bug fixing or improvements</option><option>Other project</option></select></label>
+        <label>Budget (optional)<select name="budget" defaultValue=""><option value="">Prefer not to say</option><option>Under ₦100,000</option><option>₦100,000–₦300,000</option><option>₦300,000–₦700,000</option><option>₦700,000+</option><option>To be discussed</option></select></label>
+      </div>
+      <label>Project details<textarea name="details" rows={5} placeholder="What would you like to build?" required /></label>
+      <button className="primary-button contact-submit" type="submit">Prepare Message <Send size={15}/></button>
+      {status && <p className="contact-form-status" role="status">{status}</p>}
+      <p className="contact-form-note">This form prepares an email in your device’s email app; it does not send automatically.</p>
+    </form>
+  );
+}
 
 export default function HomePage() {
   return (
@@ -33,7 +69,7 @@ export default function HomePage() {
       <div className="project-mockup"><div className="mockup-window"><div className="mockup-top"><span>● SPATDEL</span><span>Homes　Community　Explore</span><b>Get Started</b></div><div className="mockup-content"><div><small>FIND YOUR NEXT HOME</small><h3>Find Your<br/>Next Home in Ijegun</h3><p>Discover homes and opportunities around your community.</p><div className="mock-search">⌕　Search properties in Ijegun</div><div className="mock-tiles"><span>⌂<small>For Rent</small></span><span>⌂<small>For Sale</small></span><span>♧<small>Community</small></span></div></div><div className="mock-map"><MapPin size={34}/><span>IJEGUN, LAGOS</span></div></div></div><div className="mock-phone"><div className="phone-notch"/><small>SPATDEL</small><h4>Find Your Next Home</h4><div className="phone-map"><MapPin size={24}/></div><div className="phone-line"/><div className="phone-line short"/></div></div></div></section>
       <section className="skills-about section-pad"><div className="skills-panel" id="skills"><div className="small-section-title"><Zap/><div><h2>My Skills</h2><p>Technologies I work with</p></div></div><div className="skill-grid">{skills.map((skill,i)=><span className="skill-chip" key={skill}><i>{["N","⚛","TS","≈","ϟ","PG","⬡","⌘","5","JS"][i]}</i>{skill}</span>)}</div></div>
       <div className="about-panel" id="about"><div className="small-section-title"><UserRound/><div><h2>About Me</h2><p>My journey so far</p></div></div><p>I’m Quadri Azeez, a passionate web developer focused on building modern and scalable web applications. I enjoy solving problems, learning new technologies, and creating products that make a real impact. My journey started with curiosity about how websites work, and now I’m building real-world solutions like SPATDEL.</p><ul><li><MapPin/> Lagos, Nigeria</li><li><GraduationCap/> Computer Science (In Progress)</li><li><Heart/> Football | Anime | Tech</li></ul></div><div className="dream-card"><Sparkles size={27}/><span>Better Code.<br/>Bigger Dreams.</span><Code2 size={28}/></div></section>
-      <section className="contact-band section-pad" id="contact"><div className="contact-pitch"><Zap/><h2>Let’s Build<br/>Something Great</h2><p>Have a project in mind? I’m open to new opportunities, collaborations and ideas.</p><a className="primary-button" href="mailto:quadriazeez745@gmail.com">Contact Me <Send size={15}/></a></div><div className="stats"><div><b>1+</b><span>Major Project<br/>(SPATDEL)</span></div><div><b>1+</b><span>Year Learning<br/>& Building</span></div><div><b>100%</b><span>Commitment<br/>to Quality</span></div><div><b>∞</b><span>More Projects<br/>Coming Soon</span></div></div><div className="contact-details"><h3>Get In Touch</h3><p>Feel free to reach out!</p><a href="mailto:quadriazeez745@gmail.com"><Mail/> quadriazeez745@gmail.com</a><a href="https://github.com/olag4568" target="_blank" rel="noreferrer"><Code2/> github.com/olag4568</a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><ArrowUpRight/> LinkedIn profile</a><span><MapPin/> Lagos, Nigeria</span></div></section>
+      <section className="contact-band section-pad" id="contact"><div className="contact-pitch"><Zap/><h2>Let’s Build<br/>Something Great</h2><p>Have a project in mind? Send me the details and let’s discuss how to bring it to life.</p><a className="primary-button" href="mailto:quadriazeez745@gmail.com">Email Me <Send size={15}/></a></div><div className="contact-form-wrap"><div className="contact-form-heading"><p className="eyebrow">HAVE A PROJECT IN MIND?</p><h2>Get in Touch</h2><p>Fill in the form and your email app will open with your message ready to send.</p></div><ContactForm /></div><div className="contact-details"><h3>Other ways to reach me</h3><p>Choose whichever works for you.</p><a href="mailto:quadriazeez745@gmail.com"><Mail/> quadriazeez745@gmail.com</a><a href="https://wa.me/2348035833564" target="_blank" rel="noreferrer"><MessageCircleIcon/> WhatsApp me</a><a href="https://github.com/olag4568" target="_blank" rel="noreferrer"><Code2/> github.com/olag4568</a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><ArrowUpRight/> LinkedIn profile</a><span><MapPin/> Lagos, Nigeria</span></div></section>
       <footer className="footer section-pad"><a href="#home" className="brand"><span className="brand-mark">Q<span>.</span></span><span className="brand-name">Quadri <b>Azeez</b></span></a><p>© 2026 Quadri Azeez. Built with curiosity in Lagos.</p><a href="#home">Back to top ↑</a></footer>
     </main>
   );
