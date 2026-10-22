@@ -1,61 +1,80 @@
 %PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document (opensource)
 1 0 obj
-<< /Type /Catalog /Pages 2 0 R >>
+<<
+/F1 2 0 R /F2 3 0 R /F3 4 0 R
+>>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
 endobj
 4 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+<<
+/BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
+>>
 endobj
 5 0 obj
-<< /Length 456 >>
+<<
+/Contents 9 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 8 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+6 0 obj
+<<
+/PageMode /UseNone /Pages 8 0 R /Type /Catalog
+>>
+endobj
+7 0 obj
+<<
+/Author (\(anonymous\)) /CreationDate (D:20261022215013+00'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20261022215013+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (\(unspecified\)) /Title (\(anonymous\)) /Trapped /False
+>>
+endobj
+8 0 obj
+<<
+/Count 1 /Kids [ 5 0 R ] /Type /Pages
+>>
+endobj
+9 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 1159
+>>
 stream
-BT
-/F1 16 Tf
-50 790 Td
-(QUADRI AZEEZ OLAMILEKAN) Tj
-0 -24 Td
-/F1 12 Tf
-(WEB DEVELOPER) Tj
-0 -22 Td
-() Tj
-0 -22 Td
-(Email: quadriazeez745@gmail.com) Tj
-0 -22 Td
-() Tj
-0 -22 Td
-(TECHNICAL SKILLS) Tj
-0 -22 Td
-(HTML, CSS, JavaScript, React, Next.js) Tj
-0 -22 Td
-() Tj
-0 -22 Td
-(EXPERIENCE) Tj
-0 -22 Td
-(Entry-level web developer. No projects or professional experience listed yet.) Tj
-0 -22 Td
-() Tj
-0 -22 Td
-(EDUCATION) Tj
-0 -22 Td
-(Higher Institution) Tj
-ET
-endstream
+Gatm9gN&cS&:O:SoV6S&-@e@S4=u\8=UCB-$1B1J0-_=-Yt$T\(o0-VO5D!(A7U&KX]cN@'K)6+Vb`q&*3esQRWl1EplNA)9*ZFQdNplEj[#>#S=Y-jF7pu:2?ZD)$H#_s2fQ[?8%(2lK&q6kNJlB'*I.p`MDIYA%KR,UNSlEKT`K@C"7=`l2=tk,L,=\BQeU_52M((-*.N[3,eBQmnY^'s$`&!.rX.i/a-"siI#ba_6&1rcCcl:gm[.CNG*D'[8SF)Q6-J=n9le4o%n_<ST)W$"-B)/s>f0?nKiS`I$/JDfJ'\@(QnMT?eY1[8HBG(G,ba6,!nTs,Cd/>6YX1"IrR!F\_*LDc+W_Q]^!F$SbBQ4Cge=IGk-rsodHn'&b"K!pJc3/J,Kk"*C-FB+TSXFa,u[JOYf5,`2K`-ON9=eu.;P%Zc(lI%WdDa2"\c^8k#@3"P,?o)81k9>.gm[j;ai32F)rm2'^m5>`[Od`2N8cL.&ElpLA$1S*9rE]o;,nqjSZie<_OI>ENKoi)V=]4$s"%'A]X%@a=X<85oU@fjo(4F!a1gekuod#X?arrAA^e,Ti<;dXP/F_Ph^js.9RH;5ft)@jW2TfAXufWoA6S6Bfs+u:<'0lT-d,b58i'm4)p=sS`-`u]BYh5qf90[J6kQ1;3QT4n!b.79D%-l]h\DXT$R<'O_i*$;lnKn0uKgif=P!m9t+$V=7?\4[SR+-pCcPGU=+IWddPo$X%oMQLVpT;U6"h(L%s!?nSAh6a779m^@u@M[E:[OTrA0b,UKA.oW<+`Z_e$MW:&C7cr^*F1@?Y-/P4ED>.-U"!li#KadE:Bh##WH*h21tk5F6r@fJC-qJQ(?'#tftj!_l$FY]UQH<&Y7^Bo8+MA=D\-7[8^D.X@WmCL-]Jj::K;?'h-c!9Koa*BsiJ:N`@0H6>,r1l#Q3-[5f`mH>tB5mIY3,nHc8`tB5o08b38gjt*fgg85ml8"#N+URuhp+nS*pKFXkef`jW4=,hS?C0gaZ#98ge!l)r$Sd=Xf8R9le-pXE*=o1hOGio7]VCi;A8COHj/7>_c6fX7(meg1OW%8_L!iPdk1=e/j4Gnn>o2=I1K28*Jn)_@A/^0G%)$QE;WK3r4ccABspFO%>)\:'ubaG3'f!b-4"8a!.und.K~>endstream
 endobj
 xref
-0 6
+0 10
 0000000000 65535 f 
-0000000009 00000 n 
-0000000058 00000 n 
-0000000115 00000 n 
-0000000241 00000 n 
-0000000311 00000 n 
+0000000061 00000 n 
+0000000112 00000 n 
+0000000219 00000 n 
+0000000331 00000 n 
+0000000446 00000 n 
+0000000649 00000 n 
+0000000717 00000 n 
+0000000997 00000 n 
+0000001056 00000 n 
 trailer
-<< /Size 6 /Root 1 0 R >>
+<<
+/ID 
+[<d65ba3c571cfe6d715931e4c9541f723><d65ba3c571cfe6d715931e4c9541f723>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 7 0 R
+/Root 6 0 R
+/Size 10
+>>
 startxref
-817
+2306
 %%EOF
