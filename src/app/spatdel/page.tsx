@@ -14,7 +14,7 @@ export default function SpatdelProjectPage() {
     <main className="portfolio-shell" style={{ minHeight: "100vh" }}>
       <nav className="nav-wrap">
         <Link href="/" className="brand" aria-label="Back to Quadri Azeez portfolio"><span className="brand-mark">Q<span>.</span></span><span className="brand-name">Quadri <b>Azeez</b></span></Link>
-        <div className="nav-actions"><ThemeToggle /><Link href="/#work" className="secondary-button"><ArrowLeft size={15} /> Back to Projects</Link></div>
+        <Link href="/#work" className="secondary-button"><ArrowLeft size={15} /> Back to Projects</Link>
       </nav>
       <section className="section-pad" style={{ paddingTop: "clamp(48px, 9vw, 100px)", paddingBottom: 56, maxWidth: 1100, margin: "0 auto" }}>
         <p className="eyebrow"><Code2 size={14} /> PROJECT CASE STUDY</p>
@@ -78,7 +78,7 @@ export default function SpatdelProjectPage() {
         </section>
         <section style={{ border: "1px solid #303030", borderRadius: 12, padding: "clamp(22px, 5vw, 38px)", background: "#080808" }}><p className="eyebrow">FOLLOW THE JOURNEY</p><h2 style={{ fontSize: "clamp(25px, 4vw, 36px)", margin: "0 0 12px", letterSpacing: "-.04em" }}>SPATDEL is still evolving.</h2><p style={{ color: "#aaa", fontSize: 14, lineHeight: 1.8, maxWidth: 700, margin: "0 0 22px" }}>The public website link will be added when the project is deployed to its domain. Until then, this page shares the purpose, current direction and development progress without exposing source code.</p><Link href="/#contact" className="primary-button">Get in touch <ArrowUpRight size={16} /></Link></section>
       </section>
-      <footer className="footer section-pad"><Link href="/" className="brand"><span className="brand-mark">Q<span>.</span></span><span className="brand-name">Quadri <b>Azeez</b></span></Link><p>© 2026 Quadri Azeez. Built with curiosity in Lagos.</p><Link href="/#home">Back to top ↑</Link></footer>
+      <footer className="footer section-pad"><Link href="/" className="brand"><span className="brand-mark">Q<span>.</span></span><span className="brand-name">Quadri <b>Azeez</b></span></Link><p>© 2026 Quadri Azeez. Built with curiosity in Lagos.</p><div className="footer-actions"><ThemeToggle /><Link href="/#home">Back to top ↑</Link></div></footer>
     </main>
   );
 }
