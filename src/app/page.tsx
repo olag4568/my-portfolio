@@ -12,43 +12,32 @@ const skills = ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "P
 
 
 function ContactForm() {
-  const [status, setStatus] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [messageLinks, setMessageLinks] = useState<{ email: string; whatsapp: string } | null>(null);
 
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus("");
-    setIsSubmitting(true);
-
-    const form = event.currentTarget;
-    const data = new FormData(form);
-    const payload = {
-      name: String(data.get("name") || "").trim(),
-      email: String(data.get("email") || "").trim(),
-      project: String(data.get("project") || "").trim(),
-      budget: String(data.get("budget") || "").trim(),
-      details: String(data.get("details") || "").trim(),
-    };
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.error || "Could not send your message. Please try again.");
-      }
-
-      setStatus("Message sent successfully! I’ll get back to you as soon as I can.");
-      form.reset();
-    } catch (error) {
-      setStatus(error instanceof Error ? error.message : "Something went wrong. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    const data = new FormData(event.currentTarget);
+    const name = String(data.get("name") || "").trim();
+    const email = String(data.get("email") || "").trim();
+    const project = String(data.get("project") || "").trim();
+    const budget = String(data.get("budget") || "").trim();
+    const details = String(data.get("details") || "").trim();
+    const message = [
+      "Hi Quadri,",
+      "",
+      `My name is ${name}.`,
+      `My email: ${email}`,
+      `Project type: ${project}`,
+      `Budget: ${budget || "Not specified"}`,
+      "",
+      "Project details:",
+      details,
+    ].join("\\n");
+    const subject = `Portfolio enquiry: ${project}`;
+    setMessageLinks({
+      email: `https://mail.google.com/mail/?view=cm&fs=1&to=quadriazeez745%40gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`,
+      whatsapp: `https://wa.me/2348035833564?text=${encodeURIComponent(message)}`,
+    });
   }
 
   return (
@@ -62,11 +51,16 @@ function ContactForm() {
         <label>Budget (optional)<select name="budget" defaultValue=""><option value="">Prefer not to say</option><option>Under ₦100,000</option><option>₦100,000–₦300,000</option><option>₦300,000–₦700,000</option><option>₦700,000+</option><option>To be discussed</option></select></label>
       </div>
       <label>Project details<textarea name="details" rows={5} placeholder="What would you like to build?" required maxLength={5000} /></label>
-      <button className="primary-button contact-submit" type="submit" disabled={isSubmitting}>
-        {isSubmitting ? "Sending..." : "Send Message"} <Send size={15}/>
-      </button>
-      {status && <p className="contact-form-status" role="status">{status}</p>}
-      <p className="contact-form-note">Your message will be sent securely through the website’s contact service.</p>
+      <button className="primary-button contact-submit" type="submit">Prepare Message <Send size={15}/></button>
+      {messageLinks && (
+        <div className="contact-message-options" role="status">
+          <p>Choose where you’d like to send your message:</p>
+          <a className="primary-button" href={messageLinks.whatsapp} target="_blank" rel="noreferrer"><MessageCircleIcon size={16}/> Send with WhatsApp</a>
+          <a className="secondary-button" href={messageLinks.email} target="_blank" rel="noreferrer"><Mail size={16}/> Send with Gmail</a>
+          <button className="contact-edit-button" type="button" onClick={() => setMessageLinks(null)}>Edit message</button>
+          <p className="contact-form-note">Your message will be prepared for you. Review it and press Send in WhatsApp or Gmail.</p>
+        </div>
+      )}
     </form>
   );
 }
@@ -95,7 +89,7 @@ export default function HomePage() {
       <div className="project-mockup"><div className="mockup-window"><div className="mockup-top"><span>● SPATDEL</span><span>Homes　Community　Explore</span><b>Get Started</b></div><div className="mockup-content"><div><small>FIND YOUR NEXT HOME</small><h3>Find Your<br/>Next Home in Ijegun</h3><p>Discover homes and opportunities around your community.</p><div className="mock-search">⌕　Search properties in Ijegun</div><div className="mock-tiles"><span>⌂<small>For Rent</small></span><span>⌂<small>For Sale</small></span><span>♧<small>Community</small></span></div></div><div className="mock-map"><MapPin size={34}/><span>IJEGUN, LAGOS</span></div></div></div><div className="mock-phone"><div className="phone-notch"/><small>SPATDEL</small><h4>Find Your Next Home</h4><div className="phone-map"><MapPin size={24}/></div><div className="phone-line"/><div className="phone-line short"/></div></div></div></section>
       <section className="skills-about section-pad"><div className="skills-panel" id="skills"><div className="small-section-title"><Zap/><div><h2>My Skills</h2><p>Technologies I work with</p></div></div><div className="skill-grid">{skills.map((skill,i)=><span className="skill-chip" key={skill}><i>{["N","⚛","TS","≈","ϟ","PG","⬡","⌘","5","JS"][i]}</i>{skill}</span>)}</div></div>
       <div className="about-panel" id="about"><div className="small-section-title"><UserRound/><div><h2>About Me</h2><p>My journey so far</p></div></div><p>I’m Quadri Azeez, a passionate web developer focused on building modern and scalable web applications. I enjoy solving problems, learning new technologies, and creating products that make a real impact. My journey started with curiosity about how websites work, and now I’m building real-world solutions like SPATDEL.</p><ul><li><MapPin/> Lagos, Nigeria</li><li><GraduationCap/> Computer Science (In Progress)</li><li><Heart/> Football | Anime | Tech</li></ul></div><div className="dream-card"><Sparkles size={27}/><span>Better Code.<br/>Bigger Dreams.</span><Code2 size={28}/></div></section>
-      <section className="contact-band section-pad" id="contact"><div className="contact-pitch"><Zap/><h2>Let’s Build<br/>Something Great</h2><p>Have a project in mind? Send me the details and let’s discuss how to bring it to life.</p><a className="primary-button" href="mailto:quadriazeez745@gmail.com">Email Me <Send size={15}/></a></div><div className="contact-form-wrap"><div className="contact-form-heading"><p className="eyebrow">HAVE A PROJECT IN MIND?</p><h2>Get in Touch</h2><p>Fill in the form and your email app will open with your message ready to send.</p></div><ContactForm /></div><div className="contact-details"><h3>Other ways to reach me</h3><p>Choose whichever works for you.</p><a href="mailto:quadriazeez745@gmail.com"><Mail/> quadriazeez745@gmail.com</a><a href="https://wa.me/2348035833564" target="_blank" rel="noreferrer"><MessageCircleIcon/> WhatsApp me</a><a href="https://github.com/olag4568" target="_blank" rel="noreferrer"><Code2/> github.com/olag4568</a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><ArrowUpRight/> LinkedIn profile</a><span><MapPin/> Lagos, Nigeria</span></div></section>
+      <section className="contact-band section-pad" id="contact"><div className="contact-pitch"><Zap/><h2>Let’s Build<br/>Something Great</h2><p>Have a project in mind? Send me the details and let’s discuss how to bring it to life.</p><a className="primary-button" href="https://mail.google.com/mail/?view=cm&fs=1&to=quadriazeez745%40gmail.com&su=Portfolio%20project%20enquiry" target="_blank" rel="noreferrer">Message Me on Gmail <Mail size={15}/></a></div><div className="contact-form-wrap"><div className="contact-form-heading"><p className="eyebrow">HAVE A PROJECT IN MIND?</p><h2>Get in Touch</h2><p>Fill in the form, then choose WhatsApp or Gmail to send your message.</p></div><ContactForm /></div><div className="contact-details"><h3>Other ways to reach me</h3><p>Choose whichever works for you.</p><a href="mailto:quadriazeez745@gmail.com"><Mail/> quadriazeez745@gmail.com</a><a href="https://wa.me/2348035833564" target="_blank" rel="noreferrer"><MessageCircleIcon/> WhatsApp me</a><a href="https://github.com/olag4568" target="_blank" rel="noreferrer"><Code2/> github.com/olag4568</a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><ArrowUpRight/> LinkedIn profile</a><span><MapPin/> Lagos, Nigeria</span></div></section>
       <footer className="footer section-pad"><a href="#home" className="brand"><span className="brand-mark">Q<span>.</span></span><span className="brand-name">Quadri <b>Azeez</b></span></a><p>© 2026 Quadri Azeez. Built with curiosity in Lagos.</p><a href="#home">Back to top ↑</a></footer>
     </main>
   );
