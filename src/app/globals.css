@@ -372,3 +372,72 @@ body {
   .contact-direct-actions a { width: 100%; }
   .contact-details { padding: 24px 0 8px; }
 }
+
+
+/* Accessible theme switcher */
+.nav-actions{display:flex;align-items:center;gap:12px}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:9px 12px;border:1px solid #454545;border-radius:999px;background:#111;color:#f5f5f5;font:600 11px Arial,Helvetica,sans-serif;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+.theme-toggle:hover{border-color:#7b61ff}
+.theme-toggle:focus-visible{outline:3px solid #8b7cff;outline-offset:3px}
+@media(max-width:720px){.nav-wrap{gap:10px}.nav-actions{gap:8px}.theme-toggle{min-height:38px;padding:8px 10px}.theme-toggle span{display:none}.nav-actions .secondary-button{padding:9px 11px;font-size:10px}}
+html[data-theme="light"]{color-scheme:light;--paper:#f5f7fb;--ink:#172033;--muted:#596579;--line:#dbe1ec}
+html[data-theme="light"] body{background:#f5f7fb!important;background-image:linear-gradient(145deg,#f8faff,#edf2fa)!important;color:#172033}
+html[data-theme="light"] .portfolio-shell,
+html[data-theme="light"] .hero,
+html[data-theme="light"] .featured-section,
+html[data-theme="light"] .skills-about,
+html[data-theme="light"] .contact-band,
+html[data-theme="light"] .footer{background:#f5f7fb!important;color:#172033}
+html[data-theme="light"] .nav-wrap{background:rgba(255,255,255,.94)!important;border-color:#dbe1ec}
+html[data-theme="light"] .nav-links a,
+html[data-theme="light"] .hero-socials a,
+html[data-theme="light"] .about-panel li,
+html[data-theme="light"] .feature-points span,
+html[data-theme="light"] .contact-details a,
+html[data-theme="light"] .contact-details>span{color:#334155}
+html[data-theme="light"] .hero-role,
+html[data-theme="light"] .hero-intro,
+html[data-theme="light"] .project-description,
+html[data-theme="light"] .about-panel>p,
+html[data-theme="light"] .featured-subtitle,
+html[data-theme="light"] .small-section-title p{color:#526078}
+html[data-theme="light"] .featured-card,
+html[data-theme="light"] .secondary-button,
+html[data-theme="light"] .tech-float>span,
+html[data-theme="light"] .skill-chip,
+html[data-theme="light"] .dream-card,
+html[data-theme="light"] .art-sticker,
+html[data-theme="light"] .mockup-window,
+html[data-theme="light"] .mockup-top,
+html[data-theme="light"] .mockup-content,
+html[data-theme="light"] .mock-tiles span,
+html[data-theme="light"] .mock-phone,
+html[data-theme="light"] .phone-line{background:#fff!important;color:#263247;border-color:#d7deea;box-shadow:0 8px 28px #243a5b12}
+html[data-theme="light"] .skills-about,
+html[data-theme="light"] .skills-panel,
+html[data-theme="light"] .contact-details,
+html[data-theme="light"] .footer{border-color:#dbe1ec}
+html[data-theme="light"] .contact-pitch{background:linear-gradient(125deg,#dcecff,#e9e4ff)!important;border-color:#d1d9eb}
+html[data-theme="light"] .contact-pitch p{color:#43516a}
+html[data-theme="light"] .contact-pitch>svg,
+html[data-theme="light"] .contact-pitch .eyebrow{color:#4338ca}
+html[data-theme="light"] .contact-form label{color:#334155}
+html[data-theme="light"] .contact-form input,
+html[data-theme="light"] .contact-form select,
+html[data-theme="light"] .contact-form textarea{background:#fff;color:#172033;border-color:#cbd5e1}
+html[data-theme="light"] .contact-form input::placeholder,
+html[data-theme="light"] .contact-form textarea::placeholder{color:#7b8798}
+html[data-theme="light"] .contact-form-note,
+html[data-theme="light"] .footer>p,
+html[data-theme="light"] .footer>a:last-child{color:#64748b}
+html[data-theme="light"] .theme-toggle{background:#fff;color:#172033;border-color:#cbd5e1}
+html[data-theme="light"] .portfolio-shell section[style],
+html[data-theme="light"] .portfolio-shell article[style]{color:#172033}
+html[data-theme="light"] .portfolio-shell section[style] p[style*="color: rgb(170"],
+html[data-theme="light"] .portfolio-shell section[style] p[style*="color: #aaa"],
+html[data-theme="light"] .portfolio-shell section[style] p[style*="color: #ddd"],
+html[data-theme="light"] .portfolio-shell section[style] p[style*="color: #ccc"]{color:#526078!important}
+html[data-theme="light"] .portfolio-shell section[style*="background: #080808"],
+html[data-theme="light"] .portfolio-shell article[style*="background: #080808"]{background:#fff!important;border-color:#dbe1ec!important}
+html[data-theme="light"] .portfolio-shell section[style*="border-top: 1px solid #303030"],
+html[data-theme="light"] .portfolio-shell section[style*="border: 1px solid #303030"]{border-color:#dbe1ec!important}
