@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import ThemeToggle from "@/components/ThemeToggle";
 import {
   ArrowRight, ArrowUpRight, CheckCircle2, Code2,
   Download, GraduationCap, Heart, Home, Mail, MapPin,
@@ -66,6 +67,7 @@ export default function HomePage() {
         <a href="#home" className="brand" aria-label="Quadri Azeez home"><span className="brand-mark">Q<span>.</span></span><span className="brand-name">Quadri <b>Azeez</b></span></a>
         <div className="nav-links"><a href="#home">Home</a><a href="#work">Projects</a><a href="#skills">Skills</a><a href="#about">About</a><a href="#contact">Contact</a></div>
         <a className="nav-cta" href="#contact">Get in Touch <Send size={15} /></a>
+        <ThemeToggle />
         <a className="mobile-menu" href="#work" aria-label="Jump to projects"><Menu size={22} /></a>
       </nav>
       <section className="hero section-pad" id="hero"><div className="hero-grid">
