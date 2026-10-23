@@ -770,6 +770,28 @@ html[data-theme="light"] .portfolio-shell .contact-pitch h2.rotating-headline .r
 }
 
 
+
+
+/* Desktop contact layout: balance the rotating headline with the project form. */
+@media (min-width: 1051px) {
+  .portfolio-shell > .contact-band {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    column-gap: clamp(28px, 4vw, 64px);
+    align-items: center;
+  }
+  .portfolio-shell > .contact-band > .contact-pitch {
+    min-width: 0;
+    margin-left: calc(clamp(22px, 5vw, 76px) * -1);
+    padding-left: clamp(22px, 5vw, 76px);
+    padding-right: clamp(20px, 3vw, 44px);
+  }
+  .portfolio-shell > .contact-band > .contact-form-wrap {
+    min-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 /* Consistent breathing room between the main portfolio sections. */
 .portfolio-shell > .hero {
   padding-top: clamp(30px, 4vw, 56px);
