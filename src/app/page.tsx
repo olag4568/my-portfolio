@@ -45,7 +45,7 @@ function ContactForm() {
         <label>Project type<select name="project" required defaultValue=""><option value="" disabled>Select a service</option><option>Business website</option><option>Web application</option><option>E-commerce website</option><option>Bug fixing or improvements</option><option>Other project</option></select></label>
         <label>Budget (optional)<select name="budget" defaultValue=""><option value="">Prefer not to say</option><option>Under ₦100,000</option><option>₦100,000–₦300,000</option><option>₦300,000–₦700,000</option><option>₦700,000+</option><option>To be discussed</option></select></label>
       </div>
-      <label>Project details<textarea name="details" rows={5} placeholder="What would you like to build?" required maxLength={5000} /></label>
+      <label>Project details (optional)<textarea name="details" rows={5} placeholder="What would you like to build?" maxLength={5000} /></label>
       <button className="primary-button contact-submit" type="submit"><Mail size={16}/> Submit via Gmail</button>
       <p className="contact-form-note">Clicking submit opens Gmail with your project details ready to send.</p>
     </form>
