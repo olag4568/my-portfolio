@@ -880,6 +880,35 @@ html[data-theme="light"] .portfolio-shell .contact-pitch h2.rotating-headline .r
 }
 
 
+/* Desktop contact pitch: stable headline height and less vertical padding. */
+@media (min-width: 1051px) {
+  .portfolio-shell > .contact-band {
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
+    align-items: center;
+  }
+  .portfolio-shell > .contact-band > .contact-pitch {
+    align-self: center;
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
+  }
+  .portfolio-shell > .contact-band > .contact-pitch h2.rotating-headline {
+    height: 2.24em;
+    min-height: 2.24em;
+    max-height: 2.24em;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    line-height: 1.12;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    text-wrap: pretty;
+  }
+  .portfolio-shell > .contact-band > .contact-pitch > p:not(.eyebrow) {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+}
+
 /* Blinking cursor for the hero greeting typewriter effect. */
 .portfolio-shell .typing-cursor {
   display: inline-block;
