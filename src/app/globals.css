@@ -792,6 +792,23 @@ html[data-theme="light"] .portfolio-shell .contact-pitch h2.rotating-headline .r
   }
 }
 
+/* Let the rotating-headline panel size to its own content, not the form column. */
+@media (min-width: 1051px) {
+  .portfolio-shell > .contact-band > .contact-pitch {
+    width: fit-content;
+    max-width: 100%;
+    justify-self: start;
+  }
+  .portfolio-shell > .contact-band > .contact-pitch h2.rotating-headline {
+    max-width: 18ch;
+    overflow-wrap: normal;
+    text-wrap: balance;
+  }
+  .portfolio-shell > .contact-band > .contact-pitch .rainbow-word {
+    white-space: nowrap;
+  }
+}
+
 /* Consistent breathing room between the main portfolio sections. */
 .portfolio-shell > .hero {
   padding-top: clamp(30px, 4vw, 56px);
