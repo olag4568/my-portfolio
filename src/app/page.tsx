@@ -54,6 +54,40 @@ function ContactForm() {
 
 export default function HomePage() {
   const [headlineIndex, setHeadlineIndex] = useState(0);
+  const [typedIntro, setTypedIntro] = useState("");
+  const introText = "Hi, I'm a web developer";
+
+  useEffect(() => {
+    let position = 0;
+    let deleting = false;
+    let timeout: number;
+
+    const tick = () => {
+      if (!deleting) {
+        position += 1;
+        setTypedIntro(introText.slice(0, position));
+        if (position >= introText.length) {
+          deleting = true;
+          timeout = window.setTimeout(tick, 1400);
+          return;
+        }
+        timeout = window.setTimeout(tick, 85);
+      } else {
+        position -= 1;
+        setTypedIntro(introText.slice(0, position));
+        if (position <= 0) {
+          deleting = false;
+          timeout = window.setTimeout(tick, 350);
+          return;
+        }
+        timeout = window.setTimeout(tick, 45);
+      }
+    };
+
+    timeout = window.setTimeout(tick, 350);
+    return () => window.clearTimeout(timeout);
+  }, []);
+
   const headlines = ["great.", "amazing.", "brilliant.", "unforgettable.", "incredible.", "exceptional.", "remarkable.", "outstanding.", "extraordinary.", "impactful.", "creative.", "beautiful.", "powerful.", "memorable.", "successful."];
 
   useEffect(() => {
@@ -71,7 +105,7 @@ export default function HomePage() {
       </nav>
       <section className="hero section-pad" id="hero"><div className="hero-grid">
         <div className="hero-copy">
-          <motion.p className="eyebrow" initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} transition={{duration:.5}}>👋 HI, I'M A WEB DEVELOPER</motion.p>
+          <motion.p className="eyebrow typing-eyebrow" initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} transition={{duration:.5}}>👋 {typedIntro}<span className="typing-cursor" aria-hidden="true">|</span></motion.p>
           <motion.h1 initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:.65,delay:.1}}>Quadri<br/><span className="highlight-word">Azeez</span></motion.h1>
           <p className="hero-role">Full Stack Web Developer</p><p className="hero-intro">I build modern, responsive and user-friendly web applications that solve real problems. I love turning ideas into functional web experiences using clean code and modern technologies.</p>
           <div className="hero-actions"><a className="primary-button" href="#work">View My Projects <ArrowRight size={18}/></a><a className="secondary-button" href="/cv.pdf" download>Download CV <Download size={16}/></a></div>
