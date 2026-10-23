@@ -53,9 +53,10 @@ function ContactForm() {
 }
 
 export default function HomePage() {
-  const [headlineIndex, setHeadlineIndex] = useState(0);
   const [typedIntro, setTypedIntro] = useState("");
+  const [typedHeadlineWord, setTypedHeadlineWord] = useState("");
   const introText = "Hi, I'm a web developer";
+  const headlines = ["great.", "amazing.", "brilliant.", "unforgettable.", "incredible.", "exceptional.", "remarkable.", "outstanding.", "extraordinary.", "impactful.", "creative.", "beautiful.", "powerful.", "memorable.", "successful."];
 
   useEffect(() => {
     let position = 0;
@@ -88,11 +89,39 @@ export default function HomePage() {
     return () => window.clearTimeout(timeout);
   }, []);
 
-  const headlines = ["great.", "amazing.", "brilliant.", "unforgettable.", "incredible.", "exceptional.", "remarkable.", "outstanding.", "extraordinary.", "impactful.", "creative.", "beautiful.", "powerful.", "memorable.", "successful."];
-
   useEffect(() => {
-    const timer = window.setInterval(() => setHeadlineIndex((current) => (current + 1) % headlines.length), 3000);
-    return () => window.clearInterval(timer);
+    let wordIndex = 0;
+    let position = 0;
+    let deleting = false;
+    let timeout: number;
+
+    const tick = () => {
+      const word = headlines[wordIndex];
+
+      if (!deleting) {
+        position += 1;
+        setTypedHeadlineWord(word.slice(0, position));
+        if (position >= word.length) {
+          deleting = true;
+          timeout = window.setTimeout(tick, 1700);
+          return;
+        }
+        timeout = window.setTimeout(tick, 105);
+      } else {
+        position -= 1;
+        setTypedHeadlineWord(word.slice(0, position));
+        if (position <= 0) {
+          deleting = false;
+          wordIndex = (wordIndex + 1) % headlines.length;
+          timeout = window.setTimeout(tick, 300);
+          return;
+        }
+        timeout = window.setTimeout(tick, 55);
+      }
+    };
+
+    timeout = window.setTimeout(tick, 500);
+    return () => window.clearTimeout(timeout);
   }, []);
 
   return (
@@ -118,7 +147,7 @@ export default function HomePage() {
       </section>
       <section className="skills-about section-pad"><div className="skills-panel" id="skills"><div className="small-section-title"><Zap/><div><h2>My Skills</h2><p>Technologies I work with</p></div></div><div className="skill-grid">{skills.map((skill,i)=><span className="skill-chip" key={skill}><i>{["N","⚛","TS","≈","ϟ","PG","⬡","⌘","5","JS"][i]}</i>{skill}</span>)}</div></div>
       <div className="about-panel" id="about"><div className="small-section-title"><UserRound/><div><h2>About Me</h2><p>My journey so far</p></div></div><p>I’m Quadri Azeez, a passionate web developer focused on building modern and scalable web applications. I enjoy solving problems, learning new technologies, and creating products that make a real impact. My journey started with curiosity about how websites work, and now I’m building real-world solutions like SPATDEL.</p><ul><li><MapPin/> Lagos, Nigeria</li><li><GraduationCap/> Computer Science (In Progress)</li><li><Heart/> Football | Anime | Tech</li></ul></div><div className="dream-card"><Sparkles size={27}/><span>Better Code.<br/>Bigger Dreams.</span><Code2 size={28}/></div></section>
-      <section className="contact-band section-pad" id="contact"><div className="contact-pitch"><Zap/><p className="eyebrow">HAVE AN IDEA? LET’S MAKE IT REAL</p><h2 key={headlineIndex} className="rotating-headline">Let’s build something <span className="rainbow-word">{headlines[headlineIndex]}</span></h2><p>I create clean, modern websites that help businesses look professional, earn trust, and turn visitors into customers.</p></div><div className="contact-form-wrap"><div className="contact-form-heading"><p className="eyebrow">TELL ME ABOUT YOUR IDEA</p><h2>Start Your Project</h2><p>Fill the form and submit to open Gmail with your details. Or use WhatsApp directly without filling anything.</p></div><ContactForm /><a className="secondary-button contact-whatsapp-direct" href="https://wa.me/2348035833564?text=Hi%20Quadri%2C%20I%20am%20interested%20in%20your%20web%20development%20services." target="_blank" rel="noreferrer"><MessageCircleIcon size={16}/> Contact me on WhatsApp</a><div className="contact-details"><span><MapPin/> Lagos, Nigeria</span></div></div></section>
+      <section className="contact-band section-pad" id="contact"><div className="contact-pitch"><Zap/><p className="eyebrow">HAVE AN IDEA? LET’S MAKE IT REAL</p><h2 className="rotating-headline">Let’s build something <span className="rainbow-word">{typedHeadlineWord}</span></h2><p>I create clean, modern websites that help businesses look professional, earn trust, and turn visitors into customers.</p></div><div className="contact-form-wrap"><div className="contact-form-heading"><p className="eyebrow">TELL ME ABOUT YOUR IDEA</p><h2>Start Your Project</h2><p>Fill the form and submit to open Gmail with your details. Or use WhatsApp directly without filling anything.</p></div><ContactForm /><a className="secondary-button contact-whatsapp-direct" href="https://wa.me/2348035833564?text=Hi%20Quadri%2C%20I%20am%20interested%20in%20your%20web%20development%20services." target="_blank" rel="noreferrer"><MessageCircleIcon size={16}/> Contact me on WhatsApp</a><div className="contact-details"><span><MapPin/> Lagos, Nigeria</span></div></div></section>
       <footer className="footer section-pad"><a href="#home" className="brand"><span className="brand-mark">Q<span>.</span></span><span className="brand-name">Quadri <b>Azeez</b></span></a><p>© 2026 Quadri Azeez. Built with curiosity in Lagos.</p><div className="footer-actions"><ThemeToggle /><a href="#home">Back to top ↑</a></div></footer>
     </main>
   );
