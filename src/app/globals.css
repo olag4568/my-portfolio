@@ -909,6 +909,23 @@ html[data-theme="light"] .portfolio-shell .contact-pitch h2.rotating-headline .r
   }
 }
 
+/* Desktop only: fixed contact-pitch width so changing words never resize the panel. */
+@media (min-width: 1051px) {
+  .portfolio-shell > .contact-band {
+    grid-template-columns: minmax(360px, 0.9fr) minmax(0, 1.1fr) !important;
+  }
+  .portfolio-shell > .contact-band > .contact-pitch {
+    width: 100% !important;
+    min-width: 360px;
+    max-width: 100%;
+    justify-self: stretch;
+  }
+  .portfolio-shell > .contact-band > .contact-pitch h2.rotating-headline {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 /* Blinking cursor for the hero greeting typewriter effect. */
 .portfolio-shell .typing-cursor {
   display: inline-block;
